@@ -1,95 +1,55 @@
 ---
 import Layout from '@layouts/Default.astro';
-import RecentBlogPosts from '@components/generic/RecentBlogPosts.astro';
 import MobileSocials from '@components/home/MobileSocials.astro';
-import { Pill } from '@eliancodes/brutal-ui';
-import { Button } from '@eliancodes/brutal-ui';
-import { Card } from '@eliancodes/brutal-ui';
+import { Card, Button } from '@eliancodes/brutal-ui';
 
-const builtWith = [
-  { name: 'Astro', url: 'https://astro.build/' },
-  { name: 'UnoCSS', url: 'https://uno.antfu.me/' },
+const socialLinks= [
   {
-    name: 'Content Collections',
-    url: 'https://docs.astro.build/en/guides/content-collections/',
+    name: 'GitHub',
+    url: 'https://github.com/timrbula',
   },
-  { name: 'RSS', url: 'https://docs.astro.build/en/guides/rss/' },
   {
-    name: 'Sitemap',
-    url: 'https://docs.astro.build/en/guides/integrations-guide/sitemap/',
+    name: 'Bluesky',
+    url: 'https://bsky.app/profile/timrbula.com',
   },
-  { name: 'Vercel', url: 'https://vercel.com' },
-  { name: 'TypeScript', url: 'https://www.typescriptlang.org/' },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/timothy-bula-90a33b44/',
+  }
 ];
+
+
 ---
 
 <Layout
   title='Home'
-  pageTitle='Brutal Theme | Home'
-  description='Brutal is a minimalistic, neobrutalism theme for Astro.'
+  pageTitle='timrbula | Home'
+  description='My home in the digital world.'
 >
-  <main class='bg-pink p-6'>
+  <main class='bg-pink p-6 h-full'>
     <MobileSocials />
-    <section id='about' class='grid md:grid-cols-8 gap-8 mt-4'>
-      <h2 class='hidden'>About Brutal</h2>
+    <section id='about' class='grid grid-cols-4 gap-4 mt-4 max-w-256 m-auto'>
+      <h2 class='hidden'>About</h2>
       <div class='col-span-4'>
         <Card>
           <div class='flex flex-col justify-between items-start gap-4'>
-            <p class='mt-4 outfit text-2xl md:text-5xl lg:text-7xl'>
-              Brutal theme for <a
+            <p class='my-4 outfit text-2xl md:text-5xl lg:text-7xl'>
+              The web home for <span
                 class='text-white'
-                target='_blank'
-                href='https://astro.build/'>Astro</a
+                >timrbula</span
               >
             </p>
-            <p class='mt-2 outfit text-xl md:text-3xl lg:text-5xl'>
-              A minimalistic, neobrutalism theme for Astro.
-            </p>
-            <Button target={'_self'} href='/blog/'>
-              Check out the blog &rarr;
-            </Button>
           </div>
         </Card>
       </div>
-      <div class='col-span-2'>
-        <Card>
-          <h2 class='text-2xl md:text-4xl lg:text-6xl mb-8 dm-serif'>
-            Brutal is built with
-          </h2>
-          <ul class='flex gap-4 flex-wrap'>
-            {
-              builtWith.map((item) => (
-                <li>
-                  <Pill>
-                    <a
-                      class='sanchez'
-                      href={item.url}
-                      target='_blank'
-                      title={`Go to ${item.name}`}
-                    >
-                      {item.name}
-                    </a>
-                  </Pill>
-                </li>
-              ))
-            }
-          </ul>
-        </Card>
-      </div>
-      <div class='col-span-2'>
-        <Card>
-          <h2 class='text-2xl md:text-4xl lg:text-6xl mb-4 dm-serif'>
-            What is Brutal?
-          </h2>
-          <p class='poppins'>
-            Brutal is a theme built with Astro, UnoCSS by <a
-              href='https://www.elian.codes/'>Elian</a
-            >. It's a simple, fast, and modern theme that is easy to use and
-            customize. Mainly meant to power blogs and personal websites.
-          </p>
-        </Card>
-      </div>
+      <div class='col-span-4 outfit'>
+        <Card><p class="text-6">Hi! I'm Tim. I hope this site finds you well. I'm currently working as a research engineer at <a class="underline" href="https://research.ibm.com/">IBM Research </a>focusing on code LLMs. New York City is where I call home and I'm interested in music, politics, and basketball. I'm a proud graduate of the public universities Georgia Tech and UT Austin. At the moment, I'm trying to get marginally better at Spanish and piano.</p></Card>
+    </div>
+    <div class="col-span-4 flex gap-4">
+      {socialLinks.map(link => {
+          return <Button href={link.url}>{link.name}</Button>
+      })}
+    </div>
     </section>
-    <RecentBlogPosts />
   </main>
 </Layout>

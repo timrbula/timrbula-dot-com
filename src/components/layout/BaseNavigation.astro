@@ -3,21 +3,21 @@ interface Props {
   pageTitle?: string;
 }
 
-const navigationItems = [
-  { name: 'Home', url: '/' },
-  { name: 'Blog', url: '/blog/' },
-];
-
 const socialIcons = [
   {
     name: 'GitHub',
-    url: 'https://github.com/eliancodes/brutal',
-    icon: 'i-uil-github',
+    url: 'https://github.com/timrbula',
+    icon: 'i-uil-github-alt',
   },
   {
-    name: 'Twitter',
-    url: 'https://www.twitter.com/eliancodes',
-    icon: 'i-uil-twitter',
+    name: 'Bluesky',
+    url: 'https://bsky.app/profile/timrbula.com',
+    icon: 'i-uil-brain',
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/timothy-bula-90a33b44/',
+    icon: 'i-uil-linkedin-alt',
   },
   { name: 'RSS', url: '/feed.xml', icon: 'i-uil-rss' },
 ];
@@ -28,24 +28,11 @@ const { pageTitle } = Astro.props;
 <header class='border-b-4 border-black flex justify-between p-6 items-center'>
   {pageTitle && <h1 class='hidden'>{pageTitle}</h1>}
   <a href='/' title='Back to Home'>
-    <p class='righteous md:text-5xl'>Brutal</p>
+    <p class='righteous md:text-5xl'>timrbula.com</p>
   </a>
   <nav class='hidden md:inline-block'>
     <h2 class='hidden'>Navigation</h2>
     <ul class='flex gap-8 poppins'>
-      {
-        navigationItems.map((item) => (
-          <li>
-            <a
-              class='text-lg font-medium hover:text-green hover:underline transition-all duration-150 ease-in-out'
-              href={item.url}
-              title={`Go to ${item.name}`}
-            >
-              {item.name}
-            </a>
-          </li>
-        ))
-      }
       {
         socialIcons.map((item) => (
           <li>
