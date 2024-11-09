@@ -1,10 +1,9 @@
 ---
 name: Feature request
-about: Suggest an idea to Brutal
-title: ''
+about: Suggest an idea to timrbula.com
+title: ""
 labels: enhancement
-assignees: ElianCodes
-
+assignees: timrbula
 ---
 
 **Is your feature request related to a problem? Please describe.**

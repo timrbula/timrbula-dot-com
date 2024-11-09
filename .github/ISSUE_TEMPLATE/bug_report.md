@@ -1,10 +1,9 @@
 ---
 name: Bug report
-about: Create a report to help improve Brutal
-title: ''
+about: Create a report to help improve timrbula.com
+title: ""
 labels: bug
-assignees: ElianCodes
-
+assignees: timrbula
 ---
 
 **Describe the bug**
